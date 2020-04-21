@@ -1,0 +1,228 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "ProximaNova-Black";
+
+  src: local("ProximaNova-Black"),
+    url("https://nomail.com.ua/files/eot/aa46d234cf405126cdd1c36600e4b978.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://nomail.com.ua/files/woff/aa46d234cf405126cdd1c36600e4b978.woff")
+      format("woff"),
+    url("https://nomail.com.ua/files/woff2/aa46d234cf405126cdd1c36600e4b978.woff2")
+      format("woff2");
+}
+
+body {
+  background: #050304 url(/img/main-bg.jpg) top right -400px no-repeat;
+  color: #fff;
+  background-size: contain;
+  background-attachment: fixed;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1060px;
+  margin: 91px auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+.header__logo {
+  margin-right: 71px;
+}
+
+.nav__links {
+  text-decoration: none;
+  color: #ffffff;
+  margin-right: 15px;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.movie__episode {
+  display: block;
+  margin-top: 78px;
+  font-family: "Proxima Nova", sans-serif;
+  font-style: normal;
+  font-weight: 1000;
+  font-size: 40px;
+}
+.movie__title {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-weight: 1000;
+  font-size: 64px;
+  line-height: 78px;
+  font-family: "ProximaNova-Black", sans-serif;
+}
+.movie__description {
+  color: #afafaf;
+  max-width: 572px;
+  font-size: 18px;
+  line-height: 150%;
+  margin-bottom: 25px;
+}
+.movie__premier {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  line-height: 150%;
+  color: #b02000;
+}
+.movie__date {
+  display: block;
+  margin-bottom: 46px;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+.button__play {
+  position: relative;
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  background: linear-gradient(90deg, #fb641a 0%, #fc3309 100%);
+  border-radius: 300px;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  padding: 25px 35px;
+  padding-right: 80px;
+}
+.button__play:after {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  content: "";
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #fff url(../img/play.svg) top 12px right 15px no-repeat;
+}
+.button__play:before {
+  position: absolute;
+  top: -7.7px;
+  right: -7.7px;
+  content: "";
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+  border: 18px solid rgba(255, 255, 255, 0.3);
+}
+.button,
+.slider {
+  animation-iteration-count: 3;
+  animation-delay: 1s;
+}
+
+.previous__title {
+  font-size: 18px;
+  line-height: 150%;
+  margin-bottom: 25px;
+  margin-top: 60px;
+}
+
+.slider {
+  display: flex;
+  flex-wrap: wrap;
+}
+.slider__item {
+  position: relative;
+  overflow: hidden;
+  width: 250px;
+  min-height: 200px;
+  padding: 15px 30px;
+  background: linear-gradient(
+    0deg,
+    rgba(80, 80, 80, 0.86),
+    rgba(80, 80, 80, 0.86)
+  );
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.slider__item:not(:nth-child(4n)) {
+  margin-right: 20px;
+}
+.slider__item-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.slider__item:hover {
+  background: linear-gradient(
+    0deg,
+    rgba(64, 101, 255, 0.86),
+    rgba(64, 101, 255, 0.86)
+  );
+}
+.slider__item-date {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+}
+.slider__item-title {
+  font-weight: 900;
+  font-size: 18px;
+  min-height: 80px;
+  line-height: 150%;
+}
+.slider__item-rating {
+  display: flex;
+  align-items: center;
+}
+.rating {
+  font-size: 13px;
+  line-height: 150%;
+  margin-right: 15px;
+}
+.star {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url(/img/star.svg) no-repeat;
+}
+.star__o {
+  background: url(/img/star-o.svg) no-repeat;
+}
+.slider__item--left {
+  border: none;
+  width: 31px;
+  height: 25px;
+  background: url(/img/arrow-left.svg) no-repeat;
+  margin-right: 15px;
+}
+.slider__item--right {
+  border: none;
+  width: 31px;
+  height: 25px;
+  background: url(/img/arrow-right.svg) no-repeat;
+}
+.slider__item--left span,
+.slider__item--right span {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .header {
+    flex-direction: column;
+    align-items: start;
+  }
+  .header__logo {
+    margin-bottom: 20px;
+  }
+  .movie__episode {
+    font-size: 20px;
+  }
+  .movie__title {
+    font-size: 36px;
+    line-height: 100%;
+  }
+}
